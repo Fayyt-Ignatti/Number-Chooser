@@ -22,7 +22,7 @@ public class NumberGenerator : MonoBehaviour
   public Text lowerSliderText;
   public Text upperSliderText;
 
-  public Slider lowerSlider;
+  public Slider lowerSliderSlider;
   public Slider upperSliderSlider;
 
   private int _lowerValue;
@@ -34,7 +34,7 @@ public class NumberGenerator : MonoBehaviour
   void Start()
   {
     this.number.text = "0";
-    this._lowerValue = 0;
+    this._lowerValue = 1;
     this._upperValue = 10;
     this.valuesGenerated.Enqueue(0);
     this.valuesGenerated.Enqueue(0);
@@ -58,8 +58,8 @@ public class NumberGenerator : MonoBehaviour
 
   public void LowerSliderEvent()
   {
-    int value = Convert.ToInt32(this.lowerSlider.value);
-    this.lowerSliderText.text = "Min value: " + value.ToString();
+    int value = Convert.ToInt32(this.lowerSliderSlider.value);
+    this.lowerSliderText.text = "Min Value: " + value.ToString();
     this._lowerValue = value;
   }
 
